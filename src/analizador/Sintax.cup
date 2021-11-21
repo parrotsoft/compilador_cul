@@ -42,7 +42,7 @@ DECLARACION ::=
     Identificador T_dato Igual Comillas Comillas P_coma |
     Identificador T_dato Igual Comillas Identificador Comillas P_coma |
     Identificador T_dato Igual Numero Punto Numero P_coma |
-    Identificador T_dato Igual Numero Coma Numero P_coma
+    Identificador Igual Numero Punto Numero P_coma
 ;
 
 ASIGNACION ::=

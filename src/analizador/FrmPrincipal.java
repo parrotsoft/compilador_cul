@@ -56,6 +56,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Analizador CUL");
+        setType(java.awt.Window.Type.UTILITY);
 
         btnRun.setText("Run");
         btnRun.addActionListener(new java.awt.event.ActionListener() {
@@ -68,14 +69,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         txtCodigo.setColumns(20);
         txtCodigo.setRows(5);
-        txtCodigo.setText("num1=10;");
+        txtCodigo.setText("num1 Entero;\nnombre Texto;\nn1 Real;\n\nnum1 = Captura.Entero();\nnombre = Captura.Texto();\nn1 = Captura.Real();\n\nA=b;\nnombre = \"Miguel\";\nsuma=num1+(num2*num3);\npi=3.1416;\n\nMensaje.Texto(\"Miguel\");");
         jScrollPane1.setViewportView(txtCodigo);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +111,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Sintactico"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Sintáctico"));
 
         txtSintactico.setColumns(20);
         txtSintactico.setRows(5);

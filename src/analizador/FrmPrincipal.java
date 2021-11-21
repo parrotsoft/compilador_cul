@@ -68,7 +68,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         txtCodigo.setColumns(20);
         txtCodigo.setRows(5);
-        txtCodigo.setText("pi=3,1416;");
+        txtCodigo.setText("num1=10;");
         jScrollPane1.setViewportView(txtCodigo);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

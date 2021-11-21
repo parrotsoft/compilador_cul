@@ -29,6 +29,10 @@ espacio=[ ,\t,\r]+
 /* Tipo de dato String */
 ( String ) {lexeme=yytext(); return Cadena;}
 
+
+/* Funciones */
+"Captura" {lexeme=yytext(); return leer;}
+
 /* Operador Igual */
 ( "=" ) {lexeme=yytext(); return Igual;}
 

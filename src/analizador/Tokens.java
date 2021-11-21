@@ -26,5 +26,6 @@ public enum Tokens {
     Numero,
     ERROR,
     Punto,
-    Coma
+    Coma,
+    leer
 }

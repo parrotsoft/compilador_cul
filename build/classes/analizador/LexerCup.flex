@@ -34,8 +34,11 @@ espacio=[ ,\t,\r,\n]+
 /* Tipo de dato String */
 ( String ) {return new Symbol(sym.Cadena, yychar, yyline, yytext());}
 
-/* Funciones */
+/* Funciones Captura */
 "Captura" {return new Symbol(sym.leer, yychar, yyline, yytext());}
+
+/* Funciones Mensaje */
+"Mensaje" {return new Symbol(sym.muestrar, yychar, yyline, yytext());} 
 
 /* Operador Igual */
 ( "=" ) {return new Symbol(sym.Igual, yychar, yyline, yytext());}

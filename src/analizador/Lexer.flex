@@ -30,8 +30,12 @@ espacio=[ ,\t,\r]+
 ( String ) {lexeme=yytext(); return Cadena;}
 
 
-/* Funciones */
+/* Funciones Captura */
 "Captura" {lexeme=yytext(); return leer;}
+
+/* Funciones Mensaje */
+"Mensaje" {lexeme=yytext(); return muestrar;}
+
 
 /* Operador Igual */
 ( "=" ) {lexeme=yytext(); return Igual;}

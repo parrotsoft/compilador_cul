@@ -15,9 +15,9 @@ parser code
 }
 :};
 
-terminal Linea, leer, Comillas, T_dato, Cadena, Igual, Suma, Resta, Multiplicacion, Division, Coma, Punto, 
+terminal Linea, leer, muestrar, Comillas, T_dato, Cadena, Igual, Suma, Resta, Multiplicacion, Division, Coma, Punto, 
     Parentesis_a, Parentesis_c, P_coma, Identificador, Numero, ERROR;
-non terminal INICIO, DECLARACION, SENTENCIA, ASIGNACION, LEER;
+non terminal INICIO, DECLARACION, SENTENCIA, ASIGNACION, LEER, MOSTRAR;
 
 start with INICIO;
 
@@ -31,7 +31,9 @@ SENTENCIA ::=
     SENTENCIA ASIGNACION |
     ASIGNACION |
     SENTENCIA LEER |
-    LEER
+    LEER |
+    SENTENCIA MOSTRAR |
+    MOSTRAR
 ;
 
 DECLARACION ::= 
@@ -56,5 +58,12 @@ ASIGNACION ::=
 ;
 
 LEER ::=
- leer Punto T_dato Parentesis_a Parentesis_c P_coma 
+    leer Punto T_dato Parentesis_a Parentesis_c P_coma 
+;
+
+MOSTRAR ::=
+    muestrar Punto T_dato Parentesis_a Parentesis_c P_coma |
+    muestrar Punto T_dato Parentesis_a Comillas Identificador Comillas Parentesis_c P_coma |
+    muestrar Punto T_dato Parentesis_a Identificador Parentesis_c P_coma |
+    muestrar Punto T_dato Parentesis_a Numero Parentesis_c P_coma 
 ;

@@ -1,0 +1,53 @@
+package analizador;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+    
+    public void syntax_error(Symbol s){
+        this.s = s;
+    }
+
+    public Symbol getS(){
+        return this.s;
+}
+:};
+
+terminal Linea, Comillas, T_dato, Int, Cadena, Igual, Suma, Resta, Multiplicacion, Division, Coma, Punto, 
+    Parentesis_a, Parentesis_c, P_coma, Identificador, Numero, ERROR;
+non terminal INICIO, DECLARACION, SENTENCIA, ASIGNACION;
+
+start with INICIO;
+
+INICIO ::= 
+    SENTENCIA 
+;
+
+SENTENCIA ::=
+    SENTENCIA DECLARACION |
+    DECLARACION |
+    SENTENCIA ASIGNACION |
+    ASIGNACION
+;
+
+DECLARACION ::= 
+    Identificador T_dato P_coma | 
+    Identificador T_dato Igual Numero P_coma |
+    Identificador T_dato Igual Comillas Comillas P_coma |
+    Identificador T_dato Igual Comillas Identificador Comillas P_coma |
+    Identificador T_dato Igual Numero Punto Numero P_coma |
+    Identificador T_dato Igual Numero Coma Numero P_coma
+;
+
+ASIGNACION ::=
+    Identificador Igual Numero P_coma |
+    Identificador Igual Identificador P_coma |
+    Identificador Igual Comillas Comillas P_coma |
+    Identificador Igual Comillas Identificador Comillas P_coma |
+    Identificador Igual Identificador Suma Parentesis_a Identificador Multiplicacion Identificador Parentesis_c P_coma |
+    Identificador Igual Identificador Resta Parentesis_a Identificador Multiplicacion Identificador Parentesis_c P_coma |
+    Identificador Igual Identificador Multiplicacion Parentesis_a Identificador Multiplicacion Identificador Parentesis_c P_coma |
+    Identificador Igual Identificador Division Parentesis_a Identificador Multiplicacion Identificador Parentesis_c P_coma
+;
